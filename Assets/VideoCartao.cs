@@ -11,20 +11,21 @@ public class VideoCartao : MonoBehaviour, ITrackableEventHandler{
     private ParticleSystem particleSys;
 
     Coroutine routine;
+    float cutoff;
 
     public void Start(){
         material = GetComponent<MeshRenderer>().material;
         particleSys = GetComponent<ParticleSystem>();
+        cutoff = material.GetFloat("_Cutoff");
+        StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeOut(){
-        var alpha = material.GetColor("_Color").a;
-        while(alpha > 0){
-            alpha -= fadeSpeed * Time.deltaTime;
-            var color =  material.GetColor("_Color");
-            var newColor = new Color(color.r, color.g, color.b, alpha);
-            color = new Color(color.r, color.g, color.b, color.a - fadeSpeed);
-            material.SetColor("_Color", color);
+        yield return new WaitForSeconds(start);
+        var _cutoff = cutoff;
+        while(_cutoff < 1){
+            _cutoff += fadeSpeed * Time.deltaTime;
+            material.SetFloat("_Cutoff", _cutoff);
             yield return null;
         }
         
@@ -36,18 +37,13 @@ public class VideoCartao : MonoBehaviour, ITrackableEventHandler{
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-			routine = StartCoroutine(Timer());
+            material.SetFloat("_Cutoff",cutoff);
+			routine = StartCoroutine(FadeOut());
         }
         else
         {
 			if(routine != null) StopCoroutine(routine);
         }
-    }
-    
-    private IEnumerator Timer(){
-        yield return new WaitForSeconds(start);
-        Play();
-
     }
 
     void Play(){

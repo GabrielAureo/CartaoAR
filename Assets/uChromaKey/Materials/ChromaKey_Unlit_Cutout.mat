@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ChromaKey_Unlit_Cutout
-  m_Shader: {fileID: 4800000, guid: 485e4c1583068374db77919ddf4a3037, type: 3}
+  m_Shader: {fileID: 4800000, guid: 583699770e9a6b1489176343e8a4dfa2, type: 3}
   m_ShaderKeywords: _CULL_BACK _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -77,7 +77,7 @@ Material:
     - _ChromaKeyHueRange: 0.04
     - _ChromaKeySaturationRange: 0.096
     - _Cull: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 0.07
     - _DChroma: 0.361
     - _DChromaT: 0.02
     - _DLuma: 1
@@ -89,6 +89,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _H: 0
+    - _Hue: 0
     - _HueMax: 0.69
     - _HueMin: 0.65
     - _Luma: 0.5
