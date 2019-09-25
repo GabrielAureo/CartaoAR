@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Video
-  m_Shader: {fileID: 4800000, guid: 583699770e9a6b1489176343e8a4dfa2, type: 3}
+  m_Shader: {fileID: 4800000, guid: 485e4c1583068374db77919ddf4a3037, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -26,4 +26,10 @@ Material:
     m_Floats:
     - _Cull: 0
     - _Cutoff: 0.069
-    m_Colors: []
+    - _DChroma: 0.5
+    - _DChromaT: 0.05
+    - _DLuma: 0.5
+    - _DLumaT: 0.05
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _KeyColor: {r: 0.19973257, g: 0.9245283, b: 0, a: 1}
