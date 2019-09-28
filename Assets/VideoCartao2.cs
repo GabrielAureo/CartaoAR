@@ -36,11 +36,15 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
         }
         else
         {
+            videoPlayer.Stop();
         }
     }
 
     void FadeIn(){
+        videoPlayer.targetTexture.Release();
         videoPlayer.time = 0;
+        videoPlayer.Play();
+        
         var color =  material.GetColor("_Color");
         material.SetColor("_Color", new Color(color.r, color.g, color.b, 1));
         material.DOFade(1f, .5f);
