@@ -16,11 +16,12 @@ MonoBehaviour:
     vuforiaLicenseKey: AS71bjT/////AAABmV37txGD2URzigwP+71YRUFLuUNlx9ZL9BdSxzIYzKHWVYlmOyEXoHfUEvGSVOyaoK6FtiVjDKiM7sKW4AP0vjm6/Tc8lMVvZBu0l8AAQfGHmbbXaXoYL4fYzdA82eHExIc1VKMIn6amNVmsg2al6WjCu2qYK7cZWd7/dguNPfkqHpB9uSVpleLwAdSqMl46KO9wYUaP6FA1jPypeAN004M6/nW6nCUzP2B01rj+fTYpli4gpxx6HMxkPfcFMABjRB9kMuKO6uxiExzRk4mr8dWy9w/699mbypAPzpHgvGxpV2AZY8Yom2dM1N3uYum2R1YmNuaDVW8QUQx7f7qygbDEWtvN0z0N/Cae0BG9D8uv
     ufoLicenseKey: QVRCaFVBci8vLy8vQUFBQUtBWk9mMnZLZDBmSnRibHg0a0E0L1dPS3Q4d3Rocml6VkZIdWluQmU2RDhhUEg1SkxvVE1zUG1UVklxaUs2ajcwcWJiVGU3cUgyNnZEMlhSNkhRRjhkaHE0OUNNZWpROU1YRUpxbzd4Wi8vT0FUa3VPdEk2a1hlUG1qU05TejRwTHNDVVVOcjFLWmNTaDVUN3gvNmdwWk9OWDdISTNSOVV4WjA5TDZPQjFtdmUzdzhibVdJYWdZODNmVnJSWnVzSTY4b2pHUmFEUXArS1E5VXl1bCtIa09kcWFIVHMxWHV1amZOVHFXeE1SdlJSR2RsMkF3MjhYcFZ4dmJqSC9CTi93dHhENmgrM2dMSXV5NVZzcjRHaHZmUWZjMlV2bFhEajh4T20xVmMxMkxNbS94bmZaazRwREdBa2REeG1vZ1lmSXpGNUZDQm1rbXlZbE0rZUtOQUdIYjNtWXJmQnpaVWpNcWFTV0d3c0JkSDY=
     delayedInitialization: 0
-    cameraDeviceModeSetting: -1
+    cameraDeviceModeSetting: -2
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
-    version: 8.1.11
+    modelTargetRecoWhileExtendedTracked: 1
+    version: 8.3.8
     eulaAcceptedVersions: '{"Values":["8.1","8.3"]}'
   digitalEyewear:
     cameraOffset: 0.06
@@ -55,6 +56,7 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
+    arcoreRequirement: 0
     trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
