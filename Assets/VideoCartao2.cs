@@ -10,6 +10,8 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
     public Transform plane;
     private Material material;
 
+    public Texture2D firstFrame;
+
     void Awake(){
         material = plane.GetComponent<MeshRenderer>().material;
         //FadeIn();
@@ -23,7 +25,7 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
     }
 
     private void PlayParticles(VideoPlayer vp){
-        material.DOFade(0, .5f);
+        material.DOFade(0, .5f).onComplete += ()=> videoPlayer.Stop();
         m_particleSystem.Play();
     }
 
@@ -37,7 +39,8 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {        
-            StartCoroutine(FadeIn());
+            //StartCoroutine(FadeIn());
+            FadeIn();
             
         }
         else
@@ -46,13 +49,11 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
         }
     }
 
-    IEnumerator FadeIn(){
-        videoPlayer.Prepare();
-        yield return new WaitUntil(()=> videoPlayer.isPrepared);
-        //yield return new WaitForEndOfFrame();
+    void FadeIn(){
+        Graphics.Blit(firstFrame, videoPlayer.targetTexture);
         videoPlayer.frame = 0;
-        videoPlayer.Play();
-        
+        videoPlayer.Play();      
+                
         var color =  material.GetColor("_Color");
         material.SetColor("_Color", new Color(color.r, color.g, color.b, 0));
         material.DOFade(1f, 1f);
