@@ -29,9 +29,6 @@ public class VideoCartao2 : MonoBehaviour, ITrackableEventHandler{
         m_particleSystem.Play();
     }
 
-    public void Update(){
-        transform.LookAt(Camera.main.transform, Vector3.up);
-    }
 
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
